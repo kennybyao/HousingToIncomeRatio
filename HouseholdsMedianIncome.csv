@@ -1,9 +1,10 @@
 State,HouseholdsMedianIncome,Year
-California,57708,2010
 Alabama,40474,2010
 Alaska,64576,2010
+All,49375,2010
 Arizona,46789,2010
 Arkansas,38307,2010
+California,57708,2010
 Colorado,54046,2010
 Connecticut,64032,2010
 Delaware,55847,2010
@@ -13,10 +14,10 @@ Georgia,46430,2010
 Hawaii,63030,2010
 Idaho,43490,2010
 Illinois,52972,2010
-Kentucky,40062,2010
 Indiana,44613,2010
 Iowa,47961,2010
 Kansas,48257,2010
+Kentucky,40062,2010
 Louisiana,42505,2010
 Maine,45815,2010
 Maryland,68854,2010
@@ -38,6 +39,7 @@ Ohio,45090,2010
 Oklahoma,42072,2010
 Oregon,46560,2010
 Pennsylvania,49288,2010
+Puerto Rico,18862,2010
 Rhode Island,52254,2010
 South Carolina,42018,2010
 South Dakota,45904,2010
@@ -50,9 +52,9 @@ Washington,55631,2010
 West Virginia,38218,2010
 Wisconsin,49001,2010
 Wyoming,53512,2010
-Puerto Rico,18862,2010
 Alabama,41415,2011
 Alaska,67825,2011
+All,50279,2011
 Arizona,46709,2011
 Arkansas,38758,2011
 California,57287,2011
@@ -90,6 +92,7 @@ Ohio,45749,2011
 Oklahoma,43225,2011
 Oregon,46816,2011
 Pennsylvania,50228,2011
+Puerto Rico,18660,2011
 Rhode Island,53636,2011
 South Carolina,42367,2011
 South Dakota,48321,2011
@@ -102,9 +105,9 @@ Washington,56835,2011
 West Virginia,38482,2011
 Wisconsin,50395,2011
 Wyoming,56322,2011
-Puerto Rico,18660,2011
 Alabama,41574,2012
 Alaska,67712,2012
+All,51349,2012
 Arizona,47826,2012
 Arkansas,40112,2012
 California,58328,2012
@@ -142,6 +145,7 @@ Ohio,46829,2012
 Oklahoma,44312,2012
 Oregon,49161,2012
 Pennsylvania,51230,2012
+Puerto Rico,19429,2012
 Rhode Island,54554,2012
 South Carolina,43107,2012
 South Dakota,48362,2012
@@ -154,9 +158,9 @@ Washington,57573,2012
 West Virginia,40196,2012
 Wisconsin,51059,2012
 Wyoming,54901,2012
-Puerto Rico,19429,2012
 Alabama,42849,2013
 Alaska,72237,2013
+All,52518,2013
 Arizona,48510,2013
 Arkansas,40511,2013
 California,60190,2013
@@ -194,6 +198,7 @@ Ohio,48081,2013
 Oklahoma,45690,2013
 Oregon,50251,2013
 Pennsylvania,52007,2013
+Puerto Rico,19183,2013
 Rhode Island,55902,2013
 South Carolina,44163,2013
 South Dakota,48947,2013
@@ -206,9 +211,9 @@ Washington,58405,2013
 West Virginia,41253,2013
 Wisconsin,51467,2013
 Wyoming,58752,2013
-Puerto Rico,19183,2013
 Alabama,42830,2014
 Alaska,71583,2014
+All,53770,2014
 Arizona,50068,2014
 Arkansas,41262,2014
 California,61933,2014
@@ -246,6 +251,7 @@ Ohio,49308,2014
 Oklahoma,47529,2014
 Oregon,51075,2014
 Pennsylvania,53234,2014
+Puerto Rico,18928,2014
 Rhode Island,54891,2014
 South Carolina,45238,2014
 South Dakota,50979,2014
@@ -258,9 +264,9 @@ Washington,61366,2014
 West Virginia,41059,2014
 Wisconsin,52622,2014
 Wyoming,57055,2014
-Puerto Rico,18928,2014
 Alabama,44765,2015
 Alaska,73355,2015
+All,55680,2015
 Arizona,51492,2015
 Arkansas,41995,2015
 California,64500,2015
@@ -298,6 +304,7 @@ Ohio,51075,2015
 Oklahoma,48568,2015
 Oregon,54148,2015
 Pennsylvania,55702,2015
+Puerto Rico,18626,2015
 Rhode Island,58073,2015
 South Carolina,47238,2015
 South Dakota,53017,2015
@@ -310,9 +317,9 @@ Washington,64129,2015
 West Virginia,42019,2015
 Wisconsin,55638,2015
 Wyoming,60214,2015
-Puerto Rico,18626,2015
 Alabama,46257,2016
 Alaska,76440,2016
+All,57411,2016
 Arizona,53558,2016
 Arkansas,44334,2016
 California,67739,2016
@@ -350,6 +357,7 @@ Ohio,52334,2016
 Oklahoma,49176,2016
 Oregon,57532,2016
 Pennsylvania,56907,2016
+Puerto Rico,20078,2016
 Rhode Island,60596,2016
 South Carolina,49501,2016
 South Dakota,54467,2016
@@ -362,9 +370,9 @@ Washington,67106,2016
 West Virginia,43385,2016
 Wisconsin,56811,2016
 Wyoming,59882,2016
-Puerto Rico,20078,2016
 Alabama,48123,2017
 Alaska,73181,2017
+All,59449,2017
 Arizona,56581,2017
 Arkansas,45869,2017
 California,71805,2017
@@ -402,6 +410,7 @@ Ohio,54021,2017
 Oklahoma,50051,2017
 Oregon,60212,2017
 Pennsylvania,59195,2017
+Puerto Rico,19343,2017
 Rhode Island,63870,2017
 South Carolina,50570,2017
 South Dakota,56521,2017
@@ -414,56 +423,56 @@ Washington,70979,2017
 West Virginia,43469,2017
 Wisconsin,59305,2017
 Wyoming,60434,2017
-Puerto Rico,19343,2017
-Alaska,74346,2018
-Maine,55602,2018
-North Carolina,53855,2018
-Missouri,54478,2018
-Pennsylvania,60905,2018
-Michigan,56697,2018
-Nebraska,59566,2018
-Oregon,63426,2018
-Wyoming,61584,2018
-California,75277,2018
-Mississippi,44717,2018
-Connecticut,76348,2018
-Texas,60629,2018
-Idaho,55583,2018
-Maryland,83242,2018
-New Mexico,47169,2018
 Alabama,49861,2018
-Tennessee,52375,2018
-Vermont,60782,2018
-Nevada,58646,2018
-West Virginia,44097,2018
-Oklahoma,51924,2018
-Wisconsin,60773,2018
-Puerto Rico,20296,2018
-Kansas,58218,2018
-Virginia,72577,2018
-North Dakota,63837,2018
-New Jersey,81740,2018
-Ohio,56111,2018
-South Carolina,52306,2018
-Georgia,58756,2018
+Alaska,74346,2018
+All,61211,2018
+Arizona,59246,2018
+Arkansas,47062,2018
+California,75277,2018
 Colorado,71953,2018
+Connecticut,76348,2018
+Delaware,64805,2018
+District of Columbia,85203,2018
+Florida,55462,2018
+Georgia,58756,2018
 Hawaii,80212,2018
-South Dakota,56274,2018
+Idaho,55583,2018
+Illinois,65030,2018
 Indiana,55746,2018
+Iowa,59955,2018
+Kansas,58218,2018
 Kentucky,50247,2018
 Louisiana,47905,2018
-Washington,74073,2018
-Illinois,65030,2018
-Iowa,59955,2018
-New Hampshire,74991,2018
-Rhode Island,64340,2018
-Arkansas,47062,2018
-Delaware,64805,2018
-Minnesota,70315,2018
-Montana,55328,2018
-Arizona,59246,2018
-Florida,55462,2018
+Maine,55602,2018
+Maryland,83242,2018
 Massachusetts,79835,2018
-District of Columbia,85203,2018
-Utah,71414,2018
+Michigan,56697,2018
+Minnesota,70315,2018
+Mississippi,44717,2018
+Missouri,54478,2018
+Montana,55328,2018
+Nebraska,59566,2018
+Nevada,58646,2018
+New Hampshire,74991,2018
+New Jersey,81740,2018
+New Mexico,47169,2018
 New York,67844,2018
+North Carolina,53855,2018
+North Dakota,63837,2018
+Ohio,56111,2018
+Oklahoma,51924,2018
+Oregon,63426,2018
+Pennsylvania,60905,2018
+Puerto Rico,20296,2018
+Rhode Island,64340,2018
+South Carolina,52306,2018
+South Dakota,56274,2018
+Tennessee,52375,2018
+Texas,60629,2018
+Utah,71414,2018
+Vermont,60782,2018
+Virginia,72577,2018
+Washington,74073,2018
+West Virginia,44097,2018
+Wisconsin,60773,2018
+Wyoming,61584,2018
