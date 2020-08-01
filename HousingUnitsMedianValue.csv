@@ -51,6 +51,7 @@ Washington,271800,2010
 West Virginia,95100,2010
 Wisconsin,169400,2010
 Wyoming,180100,2010
+All,195769,2010
 Alabama,122700,2011
 Alaska,238300,2011
 Arizona,153800,2011
@@ -90,6 +91,7 @@ Ohio,129600,2011
 Oklahoma,112600,2011
 Oregon,232900,2011
 Pennsylvania,164800,2011
+Puerto Rico,120300,2011
 Rhode Island,245500,2011
 South Carolina,136000,2011
 South Dakota,131400,2011
@@ -102,7 +104,11 @@ Washington,256300,2011
 West Virginia,99300,2011
 Wisconsin,166700,2011
 Wyoming,179900,2011
-Puerto Rico,120300,2011
+All,190246,2011
+Alabama,123200,2012
+Alaska,245100,2012
+Arizona,151500,2012
+Arkansas,107600,2012
 California,349400,2012
 Colorado,234900,2012
 Connecticut,267800,2012
@@ -138,6 +144,7 @@ Ohio,127600,2012
 Oklahoma,114300,2012
 Oregon,223900,2012
 Pennsylvania,163800,2012
+Puerto Rico,127300,2012
 Rhode Island,234600,2012
 South Carolina,135500,2012
 South Dakota,134300,2012
@@ -150,11 +157,7 @@ Washington,243000,2012
 West Virginia,100400,2012
 Wisconsin,165200,2012
 Wyoming,187400,2012
-Puerto Rico,127300,2012
-Alabama,123200,2012
-Alaska,245100,2012
-Arizona,151500,2012
-Arkansas,107600,2012
+All,189321,2012
 Alabama,122700,2013
 Alaska,254000,2013
 Arizona,166000,2013
@@ -194,6 +197,7 @@ Ohio,127000,2013
 Oklahoma,116500,2013
 Oregon,229700,2013
 Pennsylvania,164200,2013
+Puerto Rico,119900,2013
 Rhode Island,232300,2013
 South Carolina,139200,2013
 South Dakota,138400,2013
@@ -206,7 +210,7 @@ Washington,250800,2013
 West Virginia,103200,2013
 Wisconsin,163000,2013
 Wyoming,195500,2013
-Puerto Rico,119900,2013
+All,192271,2013
 Alabama,125600,2014
 Alaska,254500,2014
 Arizona,176700,2014
@@ -246,6 +250,7 @@ Ohio,129100,2014
 Oklahoma,119800,2014
 Oregon,239800,2014
 Pennsylvania,165400,2014
+Puerto Rico,120800,2014
 Rhode Island,236000,2014
 South Carolina,140000,2014
 South Dakota,142300,2014
@@ -258,7 +263,7 @@ Washington,266200,2014
 West Virginia,103900,2014
 Wisconsin,164700,2014
 Wyoming,201000,2014
-Puerto Rico,120800,2014
+All,198787,2014
 Alabama,134100,2015
 Alaska,259600,2015
 Arizona,194300,2015
@@ -298,6 +303,7 @@ Ohio,136400,2015
 Oklahoma,126800,2015
 Oregon,264100,2015
 Pennsylvania,170600,2015
+Puerto Rico,114100,2015
 Rhode Island,241000,2015
 South Carolina,148600,2015
 South Dakota,152800,2015
@@ -310,7 +316,16 @@ Washington,284000,2015
 West Virginia,112100,2015
 Wisconsin,168300,2015
 Wyoming,212500,2015
-Puerto Rico,114100,2015
+All,211133,2015
+Alabama,136200,2016
+Alaska,267800,2016
+Arizona,205900,2016
+Arkansas,123300,2016
+California,477500,2016
+Colorado,314200,2016
+Connecticut,274600,2016
+Delaware,243400,2016
+District of Columbia,576100,2016
 Florida,197700,2016
 Georgia,166800,2016
 Hawaii,592000,2016
@@ -341,6 +356,7 @@ Ohio,140100,2016
 Oklahoma,132200,2016
 Oregon,287100,2016
 Pennsylvania,174100,2016
+Puerto Rico,111900,2016
 Rhode Island,247700,2016
 South Carolina,153900,2016
 South Dakota,160700,2016
@@ -353,16 +369,7 @@ Washington,306400,2016
 West Virginia,117900,2016
 Wisconsin,173200,2016
 Wyoming,209500,2016
-Puerto Rico,111900,2016
-Alabama,136200,2016
-Alaska,267800,2016
-Arizona,205900,2016
-Arkansas,123300,2016
-California,477500,2016
-Colorado,314200,2016
-Connecticut,274600,2016
-Delaware,243400,2016
-District of Columbia,576100,2016
+All,219713,2016
 Alabama,141300,2017
 Alaska,273100,2017
 Arizona,223400,2017
@@ -402,6 +409,7 @@ Ohio,144200,2017
 Oklahoma,137400,2017
 Oregon,319200,2017
 Pennsylvania,181200,2017
+Puerto Rico,109800,2017
 Rhode Island,257800,2017
 South Carolina,161800,2017
 South Dakota,167600,2017
@@ -414,56 +422,57 @@ Washington,339000,2017
 West Virginia,119800,2017
 Wisconsin,178900,2017
 Wyoming,214300,2017
-Puerto Rico,109800,2017
+All,230696,2017
+Alabama,147900,2018
+Alaska,276100,2018
+Arizona,241100,2018
+Arkansas,133100,2018
+California,546800,2018
 Colorado,373300,2018
+Connecticut,277400,2018
+Delaware,255300,2018
+District of Columbia,617900,2018
+Florida,230600,2018
+Georgia,189900,2018
+Hawaii,631700,2018
+Idaho,233100,2018
+Illinois,203400,2018
 Indiana,147300,2018
+Iowa,152000,2018
+Kansas,159400,2018
 Kentucky,148100,2018
 Louisiana,167300,2018
-Illinois,203400,2018
-Iowa,152000,2018
-New Hampshire,270000,2018
-Arkansas,133100,2018
-Delaware,255300,2018
-Minnesota,235400,2018
-Montana,249200,2018
 Maine,197500,2018
-North Carolina,180600,2018
-Georgia,189900,2018
-Alaska,276100,2018
-Alabama,147900,2018
-Vermont,233100,2018
-Nevada,292200,2018
-West Virginia,121300,2018
-Oklahoma,140000,2018
-Wisconsin,188500,2018
-Puerto Rico,110800,2018
-Virginia,281700,2018
-North Dakota,198700,2018
-South Carolina,170800,2018
-Oregon,341800,2018
-Wyoming,230500,2018
-California,546800,2018
-Mississippi,123300,2018
-Connecticut,277400,2018
-Texas,186000,2018
 Maryland,324800,2018
-Florida,230600,2018
 Massachusetts,400700,2018
-District of Columbia,617900,2018
-Utah,303300,2018
-New York,325500,2018
-New Jersey,344000,2018
-Ohio,151100,2018
-Missouri,162600,2018
-Pennsylvania,186000,2018
 Michigan,162500,2018
+Minnesota,235400,2018
+Mississippi,123300,2018
+Missouri,162600,2018
+Montana,249200,2018
 Nebraska,161800,2018
-Idaho,233100,2018
+Nevada,292200,2018
+New Hampshire,270000,2018
+New Jersey,344000,2018
 New Mexico,174700,2018
-Hawaii,631700,2018
-South Dakota,171500,2018
-Washington,373100,2018
+New York,325500,2018
+North Carolina,180600,2018
+North Dakota,198700,2018
+Ohio,151100,2018
+Oklahoma,140000,2018
+Oregon,341800,2018
+Pennsylvania,186000,2018
+Puerto Rico,110800,2018
 Rhode Island,273800,2018
-Arizona,241100,2018
+South Carolina,170800,2018
+South Dakota,171500,2018
 Tennessee,177500,2018
-Kansas,159400,2018
+Texas,186000,2018
+Utah,303300,2018
+Vermont,233100,2018
+Virginia,281700,2018
+Washington,373100,2018
+West Virginia,121300,2018
+Wisconsin,188500,2018
+Wyoming,230500,2018
+All,241846,2018
