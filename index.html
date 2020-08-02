@@ -1,35 +1,277 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.axis { 
+  font: 14px sans-serif; 
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 260px;
+  height: 30px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+}
+
+#tooltip {
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  width: 180px;
+  height: 55px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+}
+
+.tick line{
+  stroke: white;
+}
+
+circle {stroke: black;}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: steelblue;
+  color: white;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 40%;
+  /* padding: 10px; */
+  text-align: right;
+}
+
+.header{
+  text-align: center;
+}
+</style>
 <html>
-<script src='https://d3js.org/d3.v5.min.js'></script>
-<style> rect {fill: lightblue; stroke: black; }</style>
+<head></head>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/d3-simple-slider"></script>
 <body>
-  <svg width=300 height=300>
-  </svg>
-  <script>
-    var data = [4,8,15,16,23,42];
+  <div class="header">
+    <h1 id="header">US Housing to Income Ratio in 2010</h1>
+  </div>
+  <div class="row" id="field_name">
+    <div class="column" id="slider-time"></div>
+    <div class="column"></div>
+    <ul class="pager">
+      <!-- <a href="#" class="previous">&laquo; Previous</a> -->
+      <a href="housing.html" class="next">Next: Housing &raquo;</a>
+    </ul>
+  </div>
+</div>
+<div id="vis"></div>
+<div id="tooltip"></div>
 
-    var x = d3.scaleBand().domain([0,1,2,3,4,5]).range([0,200]);
-    var y = d3.scaleLinear().domain([0,42]).range([200,0]);
 
-    d3.select('svg')
-      .attr('width',300)
-      .attr('height',300)
-      .append('g')
-      .attr('transform','translate(50,50)')
-      .selectAll('rect').data(data)
-      .enter().append('rect')
-      .attr('x', function(d,i) { return x(i) } )
-      .attr('y', function(d,i) { return y(d) })
-      .attr('width',100/3)
-      .attr('height', function(d,i) { return 200-y(d) } )
 
-    d3.select('svg').append('g')
-      .attr('transform','translate(50,50)')
-      .call(d3.axisLeft(y))
+<script>
+  var margin = {top: 50, right: 100, bottom: 100, left: 200},
+  width = 1300 - margin.left - margin.right,
+  height = 650 - margin.top - margin.bottom;
 
-    d3.select('svg').append('g')
-      .attr('transform','translate(50,250)')
-      .call(d3.axisBottom(x))
-  </script>
+  function update(selectedYear){
+    d3.csv("https://yaobin1991.github.io/HousingToIncomeRatio/Housing_Income_2010to2018.csv").then(function(data) {
+
+      d3.select("#vis").selectAll("svg").remove();
+
+      var x = d3.scaleLinear().range([0, width]);
+      var y = d3.scaleLinear().range([height, 0]);
+
+      var svg = d3.select("#vis").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+      var div = d3.select("#vis").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
+
+      svg.append("text")
+      .attr("transform",
+        "translate(" + (width/2) + " ," +
+        (height + margin.top ) + ")")
+      .style("text-anchor", "middle")
+      .text("Households Median Income (US dollars)");
+
+      svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left/2)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Housing Median Value (US dollars)");
+
+      var linearGradient = svg.append("defs")
+      .append("linearGradient")
+      .attr("id", "linear-gradient");
+
+      linearGradient.append("stop")
+      .attr("offset", "0%")
+      .attr("stop-color", "#F6D055");
+
+      linearGradient.append("stop")
+      .attr("offset", "100%")
+      .attr("stop-color", "#BF1D3B");
+
+      svg.append("rect")
+      .attr("x", width/2)
+      .attr("y", -margin.top)
+      .attr("width", width/2)
+      .attr("height", 20)
+      .style("stroke", "black")
+      .style("stroke-width", 2)
+      .style("fill", "url(#linear-gradient)"); 
+
+      svg.append("text")
+      .attr("y", -margin.top)
+      .attr("x", width/3)
+      .attr("dy", "1em")
+      .style("text-anchor", "left")
+      .text("Housing to Income Ratio");
+
+      svg.append("text")
+      .attr("y", -margin.top+20)
+      .attr("x", width/2)
+      .attr("dy", "1em")
+      .style("text-anchor", "left")
+      .text("2.0");
+
+      svg.append("text")
+      .attr("y", -margin.top+20)
+      .attr("x", width-20)
+      .attr("dy", "1em")
+      .style("text-anchor", "left")
+      .text("9.0");
+
+
+      d3.select("svg").selectAll("rect").remove();
+
+      svg
+      .append("rect")
+      .attr("x",0)
+      .attr("y",0)
+      .attr("height", height)
+      .attr("width", width)
+      .style("fill", "EBEBEB")
+
+      var rows =  data
+      .filter( function(d){return d.Year === selectedYear} );
+
+      x.domain([0, 90000]);
+      y.domain([0, 650000]);
+
+      var xAxis = svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(0," + height + ")");
+
+      var yAxis = svg.append("g")
+      .attr("class", "axis");
+
+      xAxis.call(d3.axisBottom(x).tickSize(-height).tickFormat(d3.format(".2s"))).select(".domain").remove();
+      yAxis.call(d3.axisLeft(y).tickSize(-width).tickFormat(d3.format(".3s"))).select(".domain").remove();
+
+      var myColor = d3.scaleLinear().domain([2.43, 8.34]).range(["#F6D055","#BF1D3B"]);
+
+      d3.select("svg").selectAll("circle").remove();
+      var tooltip = d3.select("#tooltip");
+      var test = svg.selectAll("dot")
+      .data(rows)
+      .enter().append("circle")
+      .attr("r", 10)
+      .attr("cx", function(d) { return x(d.HouseholdsMedianIncome); })
+      .attr("cy", function(d) { return y(d.HousingUnitsMedianValue); })
+      .attr("fill", function(d) { return myColor(d.Ratio); })
+      .on("mouseover", function(d) {
+        tooltip.style("opacity", .9)
+        .style("left", (d3.event.pageX) + "px")             
+        .style("top", (d3.event.pageY - 28) + "px")
+        .html(
+          d.Year + " " + d.State +
+          "<br/>Housing: $"  + d.HousingUnitsMedianValue +
+          "<br/>Income: $"  + d.HouseholdsMedianIncome +
+          "<br/>Housing to Income Ratio: "  + d.Ratio
+          )
+      })
+      .on("mouseout", function() {
+        tooltip
+        .transition().delay(5000)
+        .style("opacity", 0)
+      });
+    });
+  }
+
+  update("2010");
+
+  var dataTime = d3.range(0, 9).map(function(d) {
+    return new Date(2010 + d, 10, 3);
+  });
+
+  var gTime = d3
+  .select('div#slider-time')
+  .append('svg')
+  .attr('width', 500)
+  .attr('height', 100)
+  .append('g')
+  .attr('transform', 'translate(30,30)')
+  ;
+
+  var sliderTime = d3
+  .sliderBottom()
+  .min(d3.min(dataTime))
+  .max(d3.max(dataTime))
+  .step(1000 * 60 * 60 * 24 * 365)
+  .width(300)
+  .tickFormat(d3.timeFormat('%Y'))
+  .tickValues(dataTime)
+  .default(new Date(2010, 10, 3))
+  .on('onchange', val => {
+    var myTime = d3.timeFormat('%Y')(val);
+// d3.select('p#value-time').text(myTime);
+update(myTime);
+d3.select('#header').text("US Housing to Income Ratio in " + myTime);
+
+});
+
+  gTime.call(sliderTime);
+
+</script>
 </body>
 </html>
