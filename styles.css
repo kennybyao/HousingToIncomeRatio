@@ -34,7 +34,7 @@ div.tooltip {
 }
 
 .tick line{
-  stroke: white;
+  stroke: black;
 }
 
 circle {stroke: black;}
@@ -80,4 +80,11 @@ a:hover {
 
 text.title {
   font-size: 1.2em;
+}
+
+p {
+  color: navy;
+  text-indent: 30px;
+  width: auto;
+  text-align: left;
 }
