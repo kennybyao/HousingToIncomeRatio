@@ -1,87 +1,12 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<style> /* set the CSS */
-
-.line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 2px;
-}
-
-.axis { 
-  font: 14px sans-serif; 
-}
-
-div.tooltip {
-  position: absolute;
-  text-align: center;
-  width: 260px;
-  height: 30px;
-  padding: 2px;
-  font: 12px sans-serif;
-  background: lightsteelblue;
-  border: 0px;
-  border-radius: 8px;
-}
-
-#tooltip {
-  opacity: 0;
-  position: absolute;
-  text-align: center;
-  width: 180px;
-  height: 55px;
-  padding: 2px;
-  font: 12px sans-serif;
-  background: lightsteelblue;
-  border: 0px;
-  border-radius: 8px;
-}
-
-.tick line{
-  stroke: white;
-}
-
-circle {stroke: black;}
-
-a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-}
-
-a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.previous {
-  background-color: #f1f1f1;
-  color: black;
-}
-
-.next {
-  background-color: steelblue;
-  color: white;
-}
-
-.row {
-  display: flex;
-}
-
-.column {
-  flex: 40%;
-  /* padding: 10px; */
-  text-align: right;
-}
-
-.header{
-  text-align: center;
-}
-</style>
 <html>
-<head></head>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://unpkg.com/d3-simple-slider"></script>
+<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
 <body>
   <div class="header">
     <h1 id="header">US Housing to Income Ratio in 2010</h1>
@@ -97,9 +22,6 @@ a:hover {
 </div>
 <div id="vis"></div>
 <div id="tooltip"></div>
-
-
-
 <script>
   var margin = {top: 50, right: 100, bottom: 100, left: 200},
   width = 1300 - margin.left - margin.right,
@@ -208,6 +130,43 @@ a:hover {
       xAxis.call(d3.axisBottom(x).tickSize(-height).tickFormat(d3.format(".2s"))).select(".domain").remove();
       yAxis.call(d3.axisLeft(y).tickSize(-width).tickFormat(d3.format(".3s"))).select(".domain").remove();
 
+
+      svg
+      .append("rect")
+      .attr("x",0)
+      .attr("y",0)
+      .attr("height", height)
+      .attr("width", width)
+      .style("fill", "EBEBEB")
+
+      const annotations = [
+        {
+          type: d3.annotationCalloutCircle,
+          note: {
+            label: "The darker the red, the higher the ratio of housing to income",
+            title: "Housing to Income Ratio",
+            wrap: 190
+          },
+          //settings for the subject, in this case the circle radius
+          subject: {
+            radius: 100
+          },
+          x: 780,
+          y: 100,
+          dy: 100,
+          dx: -300
+      }].map(function(d){ d.color = "#E8336D"; return d});
+
+      const makeAnnotations = d3.annotation()
+      .type(d3.annotationLabel)
+      .annotations(annotations);
+
+      svg
+      .append("g")
+      .attr("class", "annotation-group")
+      .call(makeAnnotations)
+
+      
       var myColor = d3.scaleLinear().domain([2.43, 8.34]).range(["#F6D055","#BF1D3B"]);
 
       d3.select("svg").selectAll("circle").remove();

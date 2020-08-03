@@ -1,170 +1,83 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<style> /* set the CSS */
-
-.line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 2px;
-}
-
-.axis { 
-  font: 14px sans-serif; 
-}
-
-div.tooltip {
-  position: absolute;
-  text-align: center;
-  width: 260px;
-  height: 30px;
-  padding: 2px;
-  font: 12px sans-serif;
-  background: lightsteelblue;
-  border: 0px;
-  border-radius: 8px;
-}
-
-#tooltip {
-  opacity: 0;
-  position: absolute;
-  text-align: center;
-  width: 180px;
-  height: 55px;
-  padding: 2px;
-  font: 12px sans-serif;
-  background: lightsteelblue;
-  border: 0px;
-  border-radius: 8px;
-}
-
-.tick line{
-  stroke: white;
-}
-
-circle {stroke: black;}
-
-a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-}
-
-a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.previous {
-  background-color: #f1f1f1;
-  color: black;
-}
-
-.next {
-  background-color: steelblue;
-  color: white;
-}
-
-.row {
-  display: flex;
-}
-
-.column {
-  flex: 10%;
-  /* padding: 10px; */
-  text-align: left;
-}
-
-.header{
-  text-align: center;
-}
-</style>
 <html>
 <head>
-
+  <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
 <body>
   <div class="header">
     <h1 id="header">Households Median Income in </h1>
   </div>
-<!-- <div class="chartTitle">
-<p>
-<u>Households Median Income from 2010 to 2018</u>
-</p>
-</div> -->
-<!-- <div class="chartTitle">Households Median Income from 2010 to 2018</div> -->
-
-<div class="row" id="field_name">
-  <!-- <div class="column">Households Median Income from 2010 to 2018</div> -->
-  <div class="column">
-    <label for="states">Choose a state:</label>
-    <select id="selectedStatesButton" name="states">
-      <option>All</option>
-      <option>Alabama</option>
-      <option>Alaska</option>
-      <option>Arizona</option>
-      <option>Arkansas</option>
-      <option>California</option>
-      <option>Colorado</option>
-      <option>Connecticut</option>
-      <option>Delaware</option>
-      <option>District of Columbia</option>
-      <option>Florida</option>
-      <option>Georgia</option>
-      <option>Hawaii</option>
-      <option>Idaho</option>
-      <option>Illinois</option>
-      <option>Indiana</option>
-      <option>Iowa</option>
-      <option>Kansas</option>
-      <option>Kentucky</option>
-      <option>Louisiana</option>
-      <option>Maine</option>
-      <option>Maryland</option>
-      <option>Massachusetts</option>
-      <option>Michigan</option>
-      <option>Minnesota</option>
-      <option>Mississippi</option>
-      <option>Missouri</option>
-      <option>Montana</option>
-      <option>Nebraska</option>
-      <option>Nevada</option>
-      <option>New Hampshire</option>
-      <option>New Jersey</option>
-      <option>New Mexico</option>
-      <option>New York</option>
-      <option>North Carolina</option>
-      <option>North Dakota</option>
-      <option>Ohio</option>
-      <option>Oklahoma</option>
-      <option>Oregon</option>
-      <option>Pennsylvania</option>
-      <option>Puerto Rico</option>
-      <option>Rhode Island</option>
-      <option>South Carolina</option>
-      <option>South Dakota</option>
-      <option>Tennessee</option>
-      <option>Texas</option>
-      <option>Utah</option>
-      <option>Vermont</option>
-      <option>Virginia</option>
-      <option>Washington</option>
-      <option>West Virginia</option>
-      <option>Wisconsin</option>
-      <option>Wyoming</option>
-    </select>
+  <div class="row" id="field_name">
+    <div class="column">
+      <label for="states">Choose a state:</label>
+      <select id="selectedStatesButton" name="states">
+        <option>All</option>
+        <option>Alabama</option>
+        <option>Alaska</option>
+        <option>Arizona</option>
+        <option>Arkansas</option>
+        <option>California</option>
+        <option>Colorado</option>
+        <option>Connecticut</option>
+        <option>Delaware</option>
+        <option>District of Columbia</option>
+        <option>Florida</option>
+        <option>Georgia</option>
+        <option>Hawaii</option>
+        <option>Idaho</option>
+        <option>Illinois</option>
+        <option>Indiana</option>
+        <option>Iowa</option>
+        <option>Kansas</option>
+        <option>Kentucky</option>
+        <option>Louisiana</option>
+        <option>Maine</option>
+        <option>Maryland</option>
+        <option>Massachusetts</option>
+        <option>Michigan</option>
+        <option>Minnesota</option>
+        <option>Mississippi</option>
+        <option>Missouri</option>
+        <option>Montana</option>
+        <option>Nebraska</option>
+        <option>Nevada</option>
+        <option>New Hampshire</option>
+        <option>New Jersey</option>
+        <option>New Mexico</option>
+        <option>New York</option>
+        <option>North Carolina</option>
+        <option>North Dakota</option>
+        <option>Ohio</option>
+        <option>Oklahoma</option>
+        <option>Oregon</option>
+        <option>Pennsylvania</option>
+        <option>Puerto Rico</option>
+        <option>Rhode Island</option>
+        <option>South Carolina</option>
+        <option>South Dakota</option>
+        <option>Tennessee</option>
+        <option>Texas</option>
+        <option>Utah</option>
+        <option>Vermont</option>
+        <option>Virginia</option>
+        <option>Washington</option>
+        <option>West Virginia</option>
+        <option>Wisconsin</option>
+        <option>Wyoming</option>
+      </select>
+    </div>
+    <div class="column"></div>
+    <ul class="pager">
+      <a href="income.html" class="previous">&laquo; Previous: Housing</a>
+      <a href="index.html" class="next">Back to Main</a>
+    </ul>
   </div>
-  <div class="column"></div>
-  <ul class="pager">
-    <a href="income.html" class="previous">&laquo; Previous: Housing</a>
-    <a href="index.html" class="next">Back to Main</a>
-  </ul>
 </div>
-</div>
-
 <div id="vis"></div>
 <div id="tooltip"></div>
-
 <script>
   var margin = {top: 50, right: 100, bottom: 100, left: 200},
   width = 1300 - margin.left - margin.right,
@@ -198,8 +111,6 @@ a:hover {
   .style("text-anchor", "middle")
   .text("Year");
 
-
-
   svg.append("text")
   .attr("transform", "rotate(-90)")
   .attr("y", 0 - margin.left/2)
@@ -215,35 +126,62 @@ a:hover {
   var yAxis = svg.append("g")
   .attr("class", "axis")
 
+  d3.select("svg").selectAll("rect").remove();
 
-  function update(selectedState){
-    d3.csv("https://yaobin1991.github.io/HousingToIncomeRatio/Housing_Income_2010to2018.csv").then(function(data) {
+  svg
+  .append("rect")
+  .attr("x",0)
+  .attr("y",0)
+  .attr("height", height)
+  .attr("width", width)
+  .style("fill", "EBEBEB")
 
-      var sel = document.getElementById("selectedStatesButton");
-      var text= sel.options[sel.selectedIndex].text;
+  const annotations = [
+  {
+    note: {
+      label: "The trend is steadly flat for most of the state, as both housing and income steadly are increasing together",
+      title: "Housing to Income Ratio",
+      wrap: 150,
+      align: "right"
+    },
+    connector: {
+end: "arrow" // 'dot' also available
+},
+x: 800,
+y: 100,
+dy: 40,
+dx: -500
+}].map(function(d){ d.color = "#E8336D"; return d});
+
+const makeAnnotations = d3.annotation()
+.type(d3.annotationLabel)
+.annotations(annotations);
+
+svg
+.append("g")
+.attr("class", "annotation-group")
+.call(makeAnnotations)
+
+function update(selectedState){
+  d3.csv("https://yaobin1991.github.io/HousingToIncomeRatio/Housing_Income_2010to2018.csv").then(function(data) {
+
+    var sel = document.getElementById("selectedStatesButton");
+    var text= sel.options[sel.selectedIndex].text;
 
 // console.log(text)
 
 d3.select('#header').text("2010-2018 Housing to Income Ratio in " + text + " State");
 
 
-d3.select("svg").selectAll("rect").remove();
-
-svg
-.append("rect")
-.attr("x",0)
-.attr("y",0)
-.attr("height", height)
-.attr("width", width)
-.style("fill", "EBEBEB")
-
 
 var rows =  data
 .filter( function(d){return d.State === selectedState} )
-.sort( function(a, b){return a.Year-b.Year} );
+.sort( function(a, b){return b.Ratio-a.Ratio} );
 
 x.domain(d3.extent(rows, function(d) { return d.Year; }));
 y.domain([0, d3.max(rows, function(d) { return d.Ratio; })]);
+
+rows.sort( function(a, b){return a.Year-b.Year} );
 
 d3.select("svg").selectAll(".line").remove();
 
@@ -252,6 +190,7 @@ svg
 .data([rows])
 .attr("class", "line")
 .attr("d", valueline);
+
 
 xAxis.call(d3.axisBottom(x).tickSize(-height).tickValues([2010,2011,2012,2013,2014,2015,2016,2017,2018]).tickFormat(d3.format(".4"))).select(".domain").remove();
 yAxis.transition().duration(500).call(d3.axisLeft(y).tickSize(-width).tickFormat(d3.format(""))).select(".domain").remove();
@@ -284,12 +223,12 @@ svg.selectAll("dot")
 
 
 });
-  }
-  update("All")
-  d3.select("#selectedStatesButton").on("change", function(d){
-    var newStateOption = d3.select(this).property("value");
-    update(newStateOption)
-  })
+}
+update("All")
+d3.select("#selectedStatesButton").on("change", function(d){
+  var newStateOption = d3.select(this).property("value");
+  update(newStateOption)
+})
 
 </script>
 </body>
